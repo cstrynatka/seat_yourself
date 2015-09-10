@@ -1,1 +1,36 @@
-create.html.erb
+<h2>Create reservation</h2>
+
+<%= form_for @reservation do |f| %>
+	<% if @reservation.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% @reservation.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<!-- Replace date with drop-down list -->
+		<div class="field">
+			<%= f.label :date %><br/>
+			<%= f.text_field :date %>
+		</div>
+	<!-- Replace time with drop-down list -->
+		<div class="field">
+			<%= f.label :time %><br/>
+			<%- f.text_field :time %>
+		</div>
+	<!-- Replace party size with drop-down list -->
+		<div class="field">
+			<%= f.label :party_size.to_i %><br/>
+			<%= f.text_field :party_size.to_i %>
+		</div>
+		<div class="field">
+			<%= f.label :user %><br/>
+			<%= f.text_field :user %>
+		</div>
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
