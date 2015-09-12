@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <style>
@@ -8,10 +8,10 @@ title {font-size:32px; color:red;}
 </style>
 	<title>Reservation Times</title>
 </head>
-<body>
 		<h2 align="center">Reservation Date</h2>
 <body>
-	<form name="reservations-form-date" action="#" method="POST">
+<!-<%= form_for(@reservations) do |f| %> -->
+	<!-- <form name="reservations-form-date" action="#" method="POST">
 		<div align="center">
 			<select name="reservations-date-dropdown">
 				<option value="1">1</option>
@@ -117,5 +117,36 @@ title {font-size:32px; color:red;}
 		</div>
 	</form>
 </body>
-</html>
-<!-- <h2>Reservations</h2> -->
+</html> -->
+
+<div class="actions">
+<%= f.submit %>
+</div>
+<% end %>
+
+<%= form_for @reservation do |f| %>
+	<div class="field">
+		<%= f.label :dinner_time %>
+		<%= f.datetime_select :dinner_time %>
+	</div>
+	<div class="field">
+		<%= f.label :party_size %>
+		<%= f.options_for_select(2..20) :party_size %>
+	</div>
+	<div class="field">
+		<%= f.label :user_id %>
+		<%= f.number_field :user_id %>
+	</div>
+	<div class="field" %>
+		<%= f.label :restaurant_id %>
+		<%= f.number_field :restaurant_id %>
+	</div>
+	<div class="field" %>
+		<%= f.label :created_at %>
+		<%= f.tex_field :created_at %>
+	</div>
+	<div class="field" %>
+		<%= f.label :updated_at %>
+		<%= f.tex_field :updated_at %>
+	</div>
+<% end %>
