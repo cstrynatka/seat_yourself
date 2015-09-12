@@ -1,4 +1,4 @@
-<h2>Create reservation</h2>
+<!-- <h2>Create reservation</h2>
 
 <%= form_for @reservation do |f| %>
 	<% if @reservation.errors.any? %>
@@ -12,17 +12,21 @@
 		</div>
 	<% end %>
 	<!-- Replace date with drop-down list -->
+<!--
+			<%= f.label :dinner_time %>
+			<%= f.datetime_select :dinner_time %>
+
 		<div class="field">
 			<%= f.label :date %><br/>
 			<%= f.text_field :date %>
 		</div>
 	<!-- Replace time with drop-down list -->
-		<div class="field">
+<!--		<div class="field">
 			<%= f.label :time %><br/>
 			<%- f.text_field :time %>
 		</div>
 	<!-- Replace party size with drop-down list -->
-		<div class="field">
+<!--		<div class="field">
 			<%= f.label :party_size.to_i %><br/>
 			<%= f.text_field :party_size.to_i %>
 		</div>
@@ -33,4 +37,4 @@
 		<div class="actions">
 			<%= f.submit %>
 		</div>
-	<% end %>
+	<% end %> -->

@@ -1,6 +1,4 @@
-<h2>Log In</h2>
-
-<%= form_for(@user) do |f| %>
+<%= form_for(@restaurant) do |f| %>
 
 	<div class="field">
 		<%= f.label :email %>
@@ -8,7 +6,7 @@
 	</div>
 	<div class="field">
 		<%= f.label :password_digest %>
-		<%= f.password_field :password_digest %>
+		<%= f.text_field :password_digest %>
 	</div>
 	<div class="field">
 		<%= f.label :first_name %>
@@ -18,15 +16,12 @@
 		<%= f.label :last_name %>
 		<%= f.text_field :last_name %>
 	</div>
-	<div class="field">
+	<div class="field>">
 		<%= f.label :created_at %>
-		<%= f.datetime_select :created_at %>
+		<%= f.datetime_select :create_table %>
 	</div>
-	<div class="field">
+	<div class="field>">
 		<%= f.label :updated_at %>
 		<%= f.datetime_select :updated_at %>
-	</div>
-	<div class="actions">
-		<%= f.submit %>
 	</div>
 <% end %>
