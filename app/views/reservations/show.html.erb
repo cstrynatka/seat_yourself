@@ -1,1 +1,49 @@
 <h1>Reservations</h1>
+	<p>
+		<%= @reservations.dinner_time %> 
+		<%= @reservations.party_size %>
+		<%= @reservations.user_id %>
+		<%= @reservations.restaurant_id %>
+	</p>
+<% end %>
+
+<h3>Reservations</h3>
+	<p>Reservations for <%= @reservation.user_id %></p>
+
+	<%= @reservation.users.each do |users| %>
+		<p>
+			<%= user.comment %>
+			<%= if reservation.user != nil %>
+				<em> by <%= reservation.user.user_id %></em>
+				Added on: <%= reservation.created_at %>
+			<% end %>
+		</p>
+	<% end %>
+
+<% if current_user_id %>
+	<h4>New Reservation</h4>
+
+	<%= form_for([@reservation, @user]) do |f| %>
+		<% if @reservation.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(@reservation.errors.count, "error") %>
+				prohobited this reservation from being saved:</h2>
+				<ul>
+					<% @reservation.errors.full_messages.each do |reservation| %>
+						<li><%= reservation %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="field">
+			<%= f.label :comment %>
+			<%= f.text_area :comment %>
+		</div>
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+<% else %>
+	<p>Please <%= link_to "log in", new_session_path %> to add a reservation.</p>
+<% end %>

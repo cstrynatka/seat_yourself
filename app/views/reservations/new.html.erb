@@ -1,9 +1,11 @@
-<!-- <div class="actions">
-<%= f.submit %>
-</div>
-<% end %> -->
+<h1>New Reservation</h1>
 
-<%= form_for @reservation do |f| %>
+<%= render 'form' %>
+
+<%= link_to 'Back', reservations_path %>
+
+
+<!-- <%= form_for @reservation do |f| %>
 	<div class="field">
 		<%= f.label :dinner_time %>
 		<%= f.datetime_select :dinner_time %>
@@ -29,4 +31,4 @@
 		<%= f.tex_field :updated_at %>
 	</div>
 		<%= f.submit %>
-<% end %>
+<% end %> -->
