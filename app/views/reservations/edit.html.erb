@@ -1,0 +1,23 @@
+<h1>Reservations</h1>
+
+<p>
+	<%= link_to "Back", @reservation %>
+</p>
+
+<%= form_for @reservation do |reservation| %>
+	<p>
+		<%= reservation.label :dinner_time %>
+		<%= reservation.datetime_select :dinner_time %>
+	</p>
+	<p>
+		<%= reservation.label :party_size %>
+		<%= reservation.number_field :party_size %>
+	</p>
+	<P>
+		<%= reservation.label :user_id %>
+		<%= reservation.number_field :user_id %>
+	</P>
+	<p>
+		<%= reservation.submit %>
+	</p>
+<% end %>
